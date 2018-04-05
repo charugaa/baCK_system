@@ -47,7 +47,7 @@ Accedemos a la plataforma y como era de esperar nos recibe un "login form"
 
 ## help
 
-	usr@pwn:~/$ python baCK_system.py --help
+	usr@pwn:~/$ python cafeina.py --help
 
 	python cafeina.py --help
 	usage: cafeina.py [-h] [-v] --host HOST [--port PORT]
