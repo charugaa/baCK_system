@@ -1,8 +1,7 @@
-#  [Tool] BAcK System
+#  Exploit; SCADAS "BAS920 & ISC2000"; Credentials Exposed
 ## [BA System] “Improper Access Control (Authorization)”
 
-
-	[*] Exploit Title:       "Improper Access Control (Authorization)” 
+	[*] Exploit Title:       "SCADAS "BAS920 & ISC2000"; Credentials Exposed” 
 	[*] CVE:                 CVE-2017-17974
 	[*] Date:                29/12/2017
 	[*] Exploit Author:      Fernandez Ezequiel ( @capitan_alfa ) && Bertin Jose ( @bertinjoseb )
@@ -15,9 +14,7 @@ Atacando SCADAS de la firma “BA SYSTEM”:
 
 Accedemos a la plataforma y como era de esperar nos recibe un "login form"
 
-
 ![BAS920_2](screenshot/get_passwd.png)
-
 
 ### Exploit:
 
@@ -26,19 +23,19 @@ Accedemos a la plataforma y como era de esperar nos recibe un "login form"
 ```
 
 ### POCs:
-
 ![BAS920_3](screenshot/POC_1.png)
+
 ![BAS920_4](screenshot/POC_2.png)
 
 ### Adentro:
 ![BAS920_5](screenshot/INDOOR.png)
+
 ![BAS920_6](screenshot/INDOOR_2.png)
 
 
 ***
 
-
-# TOOL: "BAcK System"
+# TOOL: "Cafeina" 
 
 ## Quick start
 
@@ -46,14 +43,13 @@ Accedemos a la plataforma y como era de esperar nos recibe un "login form"
 	usr@pwn:~$ cd baCK_system
 
 ## help
-
+	
 	usr@pwn:~/$ python cafeina.py --help
 
 	python cafeina.py --help
 	usage: cafeina.py [-h] [-v] --host HOST [--port PORT]
 
-	[+] obtaining the credential information for the Supervisor/Administrator
-	account
+	[+] Obtaining all credentials for the Supervisor/Administrator account
 
 	optional arguments:
 	  -h, --help     show this help message and exit
