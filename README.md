@@ -35,7 +35,7 @@ Accedemos a la plataforma y como era de esperar nos recibe un "login form"
 
 ***
 
-# TOOL: "Cafeina" 
+# TOOL: "Plin Plan Plun"  (ex - cafeina )
 
 ## Quick start
 
@@ -44,10 +44,10 @@ Accedemos a la plataforma y como era de esperar nos recibe un "login form"
 
 ## help
 	
-	usr@pwn:~/$ python cafeina.py --help
+	usr@pwn:~/$ python plinplanplum.py --help
 
-	python cafeina.py --help
-	usage: cafeina.py [-h] [-v] --host HOST [--port PORT]
+	python plinplanplum.py --help
+	usage: plinplanplum.py [-h] [-v] --host HOST [--port PORT]
 
 	[+] Obtaining all credentials for the Supervisor/Administrator account
 
@@ -57,7 +57,7 @@ Accedemos a la plataforma y como era de esperar nos recibe un "login form"
 	  --host HOST    Host
 	  --port PORT    Port
 
-	[+] Demo: python cafeina.py --host 192.168.1.101 -p 81
+	[+] Demo: python plinplanplum.py --host 192.168.1.101 -p 81
 
 ***
 
