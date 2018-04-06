@@ -68,3 +68,8 @@ Accedemos a la plataforma y como era de esperar nos recibe un "login form"
 #### Las update !!!
 ![BAS920_8](screenshot/poc_tool_1.png)
 
+***
+
+### Referer:
+http://misteralfa-hack.blogspot.cl/2018/04/tool-plinplamplum-scadas-bas920-isc2000.html
+http://misteralfa-hack.blogspot.cl/2017/12/ba-system-improper-access-control.html
